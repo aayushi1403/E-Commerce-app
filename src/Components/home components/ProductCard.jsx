@@ -3,12 +3,12 @@ import { FaStar } from "react-icons/fa";
 
 function ProductCard({props}) {
   return (
-    <div className='flex w-100 h-100 border-s-black border-2 gap-2'>
+    <div className='flex flex-col justify-evenly w-100 h-100 border-s-black border-2 gap-2 rounded-3xl'>
       <img src={props.images} alt="" className='w-50 h-50'/>
       <span>{props.title}</span>
-      <div>{props.stars}<FaStar /></div>
+      <div className='flex'>{props.stars}<FaStar/></div>
       <span>{props.price}</span>
-      <button>Add to Cart</button>
+      <button className='border-s-black border-2 rounded-1xl w-40'>Add to Cart</button>
     </div>
   )
 }
