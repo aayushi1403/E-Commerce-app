@@ -6,7 +6,8 @@ import { FaRegHeart } from "react-icons/fa";
 import { RiAccountCircleFill } from "react-icons/ri";
 import Logo from '../Logo';
 
-function Headertop() {
+function Headertop() 
+{
   return (
     <div className='flex items-center justify-center px-6 py-4'>
 
@@ -15,39 +16,39 @@ function Headertop() {
 
         <Logo />
 
-        <div className="flex items-center gap-2 border-2 black w-100 h-10">
+        <div className="flex items-center gap-2 border-2 black w-100 h-15">
           <CiSearch className="text-xl size-10" />
-          <input 
-            type="text" 
+          <input
+            type="text"
             placeholder="Search"
             className="outline-none w-100 h-15"
           />
-          <div className="ml-1">Search</div>
-        </div>
-
+          <button className="ml-1 border-amber-50 border-2 bg-mist-600 rounded-3xl w-20 h-10 ">Search
+        </button >
+      </div>
       </div>
 
-      {/* Right section */}
-      <div className='flex items-center gap-6'>
+      {/* Right section */ }
+  <div className='flex items-center gap-6'>
 
-        <div className="flex items-center gap-2">
-          <FaRegHeart className='size-8'/>
-          <span>Wishlist</span>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <FaShoppingCart className='size-8'/>
-          <span>My Cart</span>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <RiAccountCircleFill className='size-8'/>
-          <span>My Account</span>
-        </div>
-
-      </div>
-
+    <div className="flex items-center gap-2">
+      <FaRegHeart className='size-8' />
+      <span>Wishlist</span>
     </div>
+
+    <div className="flex items-center gap-2">
+      <FaShoppingCart className='size-8' />
+      <span>My Cart</span>
+    </div>
+
+    <div className="flex items-center gap-2">
+      <RiAccountCircleFill className='size-8' />
+      <span>My Account</span>
+    </div>
+
+  </div>
+
+    </div >
   )
 }
 
