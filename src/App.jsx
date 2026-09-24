@@ -5,7 +5,7 @@ import Footer from './Components/Footer'
 import Home from './Components/Pages/Home'
 function App() {
   return (
-    <div className="">
+    <div className="min-h-screen flex flex-col">
       <Header/>
       <main className="flex-1">
         {/* Your page content */}

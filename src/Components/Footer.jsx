@@ -3,7 +3,7 @@ import Footerbottom from './footer components/Footerbottom'
 import Footertop from './footer components/Footertop'
 function Footer() {
   return (
-    <div className="bg-zinc-900 text-white absolute bottom-0 w-full">
+    <div className="bg-zinc-900 text-white w-full">
       <Footertop/>
       <Footerbottom/>
     </div>
