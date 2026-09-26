@@ -1,40 +1,12 @@
 import React from "react";
 import Hero from "../home components/Hero";
-import CategoryCard  from "../home components/CategoryCard"
-import ProductCard from "../home components/ProductCard"
-function Home() {
-  const categoryitems=[
-  {
-   id:"1",
-   title:"electronics",
- images:""  },
-  {
-    id:"2",
-   title:"footwear",
- images:""  },
-  {
-   id:"3",
-   title:"cosmetics",
- images:""  },
-  {
-    id:"4",
-   title:"fashion",
-   images:""
-  },
-  {
-    id:"5",
-   title:"accesories",
- images:""  },
-  {
-    id:"6",
-   title:"stationery",
- images:""  },
-  {
-    id:"7",
-   title:"households",
- images:""  }]
 
- 
+import ProductCard from "../home components/ProductCard"
+import CategorySection from "../home components/CategorySection";
+
+function Home() {
+  
+
   const productItems = [
   {
     id: "1",
@@ -69,12 +41,11 @@ function Home() {
     <main>
       
       {/* Hero Section */}
+      <section>
       <Hero/>
+      </section>
       {/* Categories Section */}
-      <div className="flex flex-wrap justify-center gap-2">
-        {categoryitems.map((items)=>( <CategoryCard key={items.id} props={items}/>))}
-        </div>
-+
+      <CategorySection/>
       {/* Featured Products */}
       <div className="flex justify-center gap-2">
         {productItems.map((items)=>( <ProductCard key={items.id}props={items}/>))}
