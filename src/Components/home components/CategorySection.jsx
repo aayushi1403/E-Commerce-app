@@ -7,6 +7,8 @@ import accessories from "../../assets/acessories.jpeg";
 import stationery from "../../assets/stationary.jpeg";
 import household from "../../assets/household.jpeg";
 import CategoryCard from './CategoryCard'
+import { useRef } from 'react';
+import './category.css'
 function CategorySection() {
 
     const categoryitems=[
@@ -39,16 +41,48 @@ function CategorySection() {
     id:"7",
    title:"households",
  images:household  }]
+
+
+  const sliderRef = useRef(null);
+
+  const slideLeft = () => {
+    sliderRef.current.scrollBy({
+      left: -300,
+      behavior: "smooth",
+    });
+  };
+
+  const slideRight = () => {
+    sliderRef.current.scrollBy({
+      left: 300,
+      behavior: "smooth",
+    });
+  };
   return (
-    <div>
-      <section>
-        <h1 className="text-[40px]">Categories</h1>
-      <div className="flex flex-wrap justify-center gap-2">
-        
-        {categoryitems.map((items)=>( <CategoryCard key={items.id} props={items}/>))}
+    <section className="categories-section">
+      <h2 className='text-[24px]'>Categories</h2>
+
+      <div className="category-slider-wrapper">
+
+        <button className="slider-btn left" onClick={slideLeft}>
+          ←
+        </button>
+
+        <div className="category-container" ref={sliderRef}>
+          {categoryitems.map((category) => (
+            <CategoryCard
+              key={category.id}
+              props={category}
+            />
+          ))}
         </div>
-      </section>
-    </div>
+
+        <button className="slider-btn right" onClick={slideRight}>
+          →
+        </button>
+
+      </div>
+    </section>
   )
 }
 

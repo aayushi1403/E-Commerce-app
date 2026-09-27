@@ -47,8 +47,11 @@ function Home() {
       {/* Categories Section */}
       <CategorySection/>
       {/* Featured Products */}
-      <div className="flex justify-center gap-2">
+      <div className="flex flex-col justify-center gap-2 p-9">
+        <h2 className="text-[24px]">Featured Products</h2>
+        <div className="flex  justify-center gap-2 ">
         {productItems.map((items)=>( <ProductCard key={items.id}props={items}/>))}
+        </div>
         </div>
     </main>
   );
