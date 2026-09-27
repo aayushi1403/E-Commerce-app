@@ -3,7 +3,7 @@ import Hero from "../home components/Hero";
 
 import ProductCard from "../home components/ProductCard"
 import CategorySection from "../home components/CategorySection";
-
+import { Link } from "react-router-dom";
 function Home() {
   
 
@@ -39,7 +39,7 @@ function Home() {
 ];
   return (
     <main>
-      
+      <Link to="/">
       {/* Hero Section */}
       <section>
       <Hero/>
@@ -53,6 +53,7 @@ function Home() {
         {productItems.map((items)=>( <ProductCard key={items.id}props={items}/>))}
         </div>
         </div>
+        </Link>
     </main>
   );
 }

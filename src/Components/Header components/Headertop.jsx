@@ -5,7 +5,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { RiAccountCircleFill } from "react-icons/ri";
 import Logo from '../Logo';
-
+import { Link } from 'react-router-dom';
 function Headertop() 
 {
   return (
@@ -33,17 +33,17 @@ function Headertop()
 
     <div className="flex items-center gap-2">
       <FaRegHeart className='size-8' />
-      <span>Wishlist</span>
+      <Link to="/wishlist"><span>Wishlist</span></Link>
     </div>
 
     <div className="flex items-center gap-2">
       <FaShoppingCart className='size-8' />
-      <span>My Cart</span>
+      <Link to="/mycart"><span>My Cart</span></Link>
     </div>
 
     <div className="flex items-center gap-2">
       <RiAccountCircleFill className='size-8' />
-      <span>My Account</span>
+      <Link to="/myaccount"><span>My Account</span></Link>
     </div>
 
   </div>

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function AllCategories() {
+function Wishlist() {
   return (
     <div>
-      
+      my Wishlist
     </div>
   )
 }
 
-export default AllCategories
+export default Wishlist

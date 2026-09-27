@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Catalog() {
+function MyAccount() {
   return (
     <div>
-      
+      my account
     </div>
   )
 }
 
-export default Catalog
+export default MyAccount
