@@ -21,8 +21,8 @@ function Headerbottom() {
 
       {/* Right */}
       <div className='flex items-center gap-5'>
-        <Link to="/login"><a href="" className='text-[20px]'>Login</a></Link>
-        <Link to="/signup"> <a href="" className='text-[20px]'>Signup</a></Link>
+        <Link to="/login"><span className='text-[20px]'>Login</span></Link>
+        <Link to="/signup"> <span className='text-[20px]'>Signup</span></Link>
        
       </div>
 

@@ -1,8 +1,8 @@
 import React from "react";
-import Hero from "../home components/Hero";
+import Hero from "../Components/home components/Hero";
 
-import ProductCard from "../home components/ProductCard"
-import CategorySection from "../home components/CategorySection";
+import ProductCard from "../Components/home components/ProductCard"
+import CategorySection from "../Components/home components/CategorySection";
 import { Link } from "react-router-dom";
 function Home() {
   
