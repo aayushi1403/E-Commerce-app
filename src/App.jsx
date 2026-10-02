@@ -12,6 +12,7 @@ import Login from './Pages/Login'
 import Signup from './Pages/Signup'
 import Wishlist from './Pages/Wishlist'
 import MyAccount from './Pages/MyAccount'
+import ProductDetails from './Components/home components/ProductDetails'
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
@@ -20,6 +21,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/mycart" element={<MyCart/>}/>
         <Route path="/products" element={<Products/>}/>
+        <Route path="/products/:id" element={<ProductDetails />} />
         
         <Route path="/aboutus" element={<AboutUs/>}/>
         <Route path="/contactus" element={<ContactUs/>}/>
