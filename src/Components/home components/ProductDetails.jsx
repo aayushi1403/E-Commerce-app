@@ -1,14 +1,40 @@
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
-import { productItems } from "../../data/Products";
+import { useState,useEffect } from "react";
+import { fetchProductByID } from "../../services/api";
 
 function ProductDetails() {
   const { id } = useParams();
   const product = productItems.find((p) => p.id === id);
+   const [products,setProducts]=useState([])
+     const [loading,setLoading]=useState(true)
+      const [error,setError]=useState(null)
+      useEffect(()=>{
+        const loadData=async()=>{
+          try {
+            const data=await fetchProductByID();
+            setProducts(data)
 
+          } catch (error) {
+            setError(error)
+          }finally{
+            setLoading(false)
+          }
+          if (id) {
+      loadProduct();
+    }
+        }
+      },[id])
   // 1. Guard Clause: If product doesn't exist, exit early
-  if (!product) {
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[50vh]">
+        <p className="text-xl font-medium text-gray-600">Loading product details...</p>
+      </div>
+    );
+  }
+if (!product || error) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[50vh] gap-4">
         <h2 className="text-2xl font-bold text-gray-800">Product Not Found</h2>
