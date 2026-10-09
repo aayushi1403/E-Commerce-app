@@ -6,8 +6,10 @@ import { FaRegHeart } from "react-icons/fa";
 import { RiAccountCircleFill } from "react-icons/ri";
 import Logo from '../Logo';
 import { Link } from 'react-router-dom';
+import { useCart } from '../../context/CartContext';
 function Headertop() 
 {
+  const {totalItems}=useCart();
   return (
     <div className='flex items-center justify-center px-6 py-4'>
 
@@ -38,7 +40,14 @@ function Headertop()
 
     <div className="flex items-center gap-2">
       <FaShoppingCart className='size-8' />
-      <Link to="/mycart"><span>My Cart</span></Link>
+      <Link to="/mycart">
+      <span>My Cart</span>
+        {totalItems > 0 && (
+    <span className="bg-red-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">
+      {totalItems}
+    </span>
+  )}
+      </Link>
     </div>
 
     <div className="flex items-center gap-2">
