@@ -4,8 +4,11 @@ import { FaStar } from "react-icons/fa";
 import { useState,useEffect } from "react";
 import { fetchProductByID } from "../../services/api";
 
+import { useCart } from "../../context/CartContext";
 function ProductDetails() {
   const { id } = useParams();
+  const {addToCart}=useCart();
+
   const product = productItems.find((p) => p.id === id);
    const [products,setProducts]=useState([])
      const [loading,setLoading]=useState(true)
@@ -99,7 +102,7 @@ if (!product || error) {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mt-2">
             <button
-              onClick={() => console.log("Added to cart:", product.title)}
+              onClick={() => addToCart(product)}
               className="flex-1 py-3 px-6 border-2 border-black text-black font-semibold rounded-xl hover:bg-black hover:text-white transition-colors"
             >
               Add to Cart

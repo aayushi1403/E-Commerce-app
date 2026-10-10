@@ -1,10 +1,12 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
-
+import { useCart } from "../../context/CartContext";
 function ProductCard({ product }) {
+  const {addToCart}=useCart();
   const handleAddToCart = (e) => {
     e.preventDefault(); // Prevents navigating to product details when clicking 'Add to Cart'
-    console.log("Added to cart:", product.title);
+    // console.log("Added to cart:", product.title);
+    addToCart(product)
   };
   return (
     <div className="flex flex-col items-center justify-between p-4 border border-gray-300 rounded-2xl shadow-sm hover:shadow-md transition-shadow bg-white h-full">
