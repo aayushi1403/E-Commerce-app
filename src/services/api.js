@@ -7,6 +7,7 @@ export async function fetchProducts() {
     
   } catch (error) {
     console.log("error in fetch products")
+    return [];
   }
   
 }
